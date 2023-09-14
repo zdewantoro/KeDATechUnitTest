@@ -1,6 +1,4 @@
 /* Soal No 1 */
-/* Soal No 1 */
-/* Soal No 1 */
 
 //Fungsi ini digunakan untuk mengubah input string menjadi array
 function stringToArray(inputString) {
@@ -96,3 +94,103 @@ module.exports = { maxSubArray };
 //     rl.close();
 //   });
 // });
+
+
+/* Node Test No 1 */
+// const assert = require("assert");
+// const { sortArray } = require("./soalno1.js");
+
+// // Test case 1
+// const input1 = [1, 2, 4, 3, 5, 3, 2, 1];
+// const expectedOutput1 = [5, 4, 3, 3, 2, 2, 1, 1];
+// assert.deepStrictEqual(
+//   sortArray(input1),
+//   expectedOutput1,
+//   "Test case 1 failed"
+// );
+
+// // Test case 2
+// const input2 = [5, 4, 3, 2, 1];
+// const expectedOutput2 = [5, 4, 3, 2, 1];
+// assert.deepStrictEqual(
+//   sortArray(input2),
+//   expectedOutput2,
+//   "Test case 2 failed"
+// );
+
+// // Test case 3
+// const input3 = [1];
+// const expectedOutput3 = [1];
+// assert.deepStrictEqual(
+//   sortArray(input3),
+//   expectedOutput3,
+//   "Test case 3 failed"
+// );
+
+// // Test case 4
+// const input4 = [];
+// const expectedOutput4 = [];
+// assert.deepStrictEqual(
+//   sortArray(input4),
+//   expectedOutput4,
+//   "Test case 4 failed"
+// );
+
+// console.log("All test cases in soal no 1 passed!");
+
+/* Node Test No 2 */
+// const assert = require("assert");
+// const { maxSubArray } = require("./soalno2.js");
+
+// // Test case 1
+// const input1_1 = [100, 200, 300, 400];
+// const input1_2 = 2;
+// const expectedOutput1 = 700;
+// assert.strictEqual(maxSubArray(input1_1, input1_2), expectedOutput1);
+
+// // Test case 2
+// const input2_1 = [1, 4, 2, 10, 23, 3, 1, 0, 20];
+// const input2_2 = 4;
+// const expectedOutput2 = 39;
+// assert.strictEqual(maxSubArray(input2_1, input2_2), expectedOutput2);
+
+// // Test case 3
+// const input3_1 = [-3, 4, 0, -2, 6, -1];
+// const input3_2 = 2;
+// const expectedOutput3 = 5;
+// assert.strictEqual(maxSubArray(input3_1, input3_2), expectedOutput3);
+
+// console.log("All test cases in soal no 2 passed!");
+
+/* Node Test No 3 */
+// const assert = require("assert");
+// const { sumEvenNumbers } = require("./soalno3.js");
+
+// // Test case 1
+// const input1 = {
+//   outer: 2,
+//   obj: {
+//     inner: 2,
+//     otherObj: {
+//       superInner: 2,
+//       notANumber: true,
+//       alsoNotANumber: "yup",
+//     },
+//   },
+// };
+// const expectedOutput1 = 6;
+// assert.strictEqual(sumEvenNumbers(input1), expectedOutput1);
+
+// // Test case 2
+// const input2 = {
+//   a: 2,
+//   b: { b: 2, bb: { b: 3, bb: { b: 2 } } },
+//   c: { c: { c: 2 }, cc: "ball", ccc: 5 },
+//   d: 1,
+//   e: { e: { e: 4 }, ee: "car" },
+// };
+
+// const expectedOutput2 = 12;
+// assert.strictEqual(sumEvenNumbers(input2), expectedOutput2);
+
+// console.log("All test cases in soal no 3 passed!");
