@@ -1,0 +1,98 @@
+/* Soal No 1 */
+/* Soal No 1 */
+/* Soal No 1 */
+
+//Fungsi ini digunakan untuk mengubah input string menjadi array
+function stringToArray(inputString) {
+  const newArray = [];
+  for (let i = 0; i < inputString.length; i++) {
+    newArray[i] = inputString[i];
+  }
+  return newArray;
+}
+
+//Fungsi ini digunakan untuk sorting input array menjadi descending order
+function sortArray(userInput) {
+  const sortedNumber = [];
+  const n = userInput.length - 1;
+  for (let i = n; i >= 0; i--) {
+    let max = userInput[i];
+    let maxIndex = i;
+    for (let j = i - 1; j >= 0; j--) {
+      if (userInput[j] > max) {
+        max = userInput[j];
+        maxIndex = j;
+      }
+    }
+    [userInput[i], userInput[maxIndex]] = [userInput[maxIndex], userInput[i]];
+    sortedNumber[sortedNumber.length] = max;
+  }
+  return sortedNumber;
+}
+
+// Export sortArray function agar dapat di import di dalam file soalno1.test.js
+module.exports = { sortArray };
+
+//Test:
+// console.log(sortArray([1, 2, 4, 3, 5, 3, 2, 1])); // Output: [5, 4, 3, 3, 2, 2, 1, 1]
+
+//Digunakan untuk user dapat memasukan input dan menjalankan fungsi stringToArray dan sortArray
+// const readline = require("readline");
+// const rl = readline.createInterface({
+//   input: process.stdin,
+//   output: process.stdout,
+// });
+// rl.question("Input array: ", function (answer) {
+//   const arrayNumber = stringToArray(answer);
+//   const result = sortArray(arrayNumber);
+//   console.log(`The sorted array is ${result}`);
+//   rl.close();
+// });
+
+/* Soal No 2 */
+
+function stringToArray(inputString) {
+  const newArray = inputString.split(",").map((str) => {
+    return parseInt(str, 10);
+  });
+  return newArray;
+}
+
+function maxSubArray(userInput, num) {
+  if (num > userInput.length) {
+    return null;
+  }
+  let maxSum = 0;
+  let tempSum = 0;
+  for (let i = 0; i < num; i++) {
+    maxSum += userInput[i];
+  }
+  tempSum = maxSum;
+  for (let i = num; i < userInput.length; i++) {
+    tempSum = tempSum - userInput[i - num] + userInput[i];
+    maxSum = Math.max(maxSum, tempSum);
+  }
+  return maxSum;
+}
+
+module.exports = { maxSubArray };
+
+// Test:
+// console.log(maxSubArray([100, 200, 300, 400], 2)); // Output: 700
+// console.log(maxSubArray([1, 4, 2, 10, 23, 3, 1, 0, 20], 4)); // Output: 39
+// console.log(maxSubArray([-3, 4, 0, -2, 6, -1], 2)); // Output: 5
+
+//Digunakan untuk user dapat memasukan input dan menjalankan fungsi stringToArray dan sortArray
+// const readline = require("readline");
+// const rl = readline.createInterface({
+//   input: process.stdin,
+//   output: process.stdout,
+// });
+// rl.question("Input array: ", function (userInput) {
+//   rl.question("Num: ", function (num) {
+//     const arrayNumber = stringToArray(userInput);
+//     const result = maxSubArray(arrayNumber, num);
+//     console.log(`Maximum number of subarrays is ${result}`);
+//     rl.close();
+//   });
+// });
